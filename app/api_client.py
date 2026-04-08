@@ -3,7 +3,7 @@ GitHub Copilot API client with streaming support using QThread.
 """
 import json
 import requests
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, Tuple
 
 from PyQt5.QtCore import QThread, pyqtSignal
 
@@ -149,7 +149,7 @@ class ApiWorker(QThread):
             self.error.emit(f"Unexpected error: {str(e)}")
 
 
-def test_connection(token: str) -> tuple[bool, str]:
+def test_connection(token: str) -> Tuple[bool, str]:
     """
     Test the Copilot API connection with a simple request.
     Returns (success, message).
