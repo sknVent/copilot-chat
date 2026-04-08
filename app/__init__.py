@@ -1,0 +1,1 @@
+"""Copilot Chat application package."""
