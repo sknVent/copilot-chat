@@ -203,10 +203,10 @@ def build_api_content(text: str, files: list) -> object:
     image_files = [f for f in files if f["type"] == "image"]
     other_files = [f for f in files if f["type"] != "image"]
 
-    # Add text with non-image file contents embedded
+    # Add text with non-image file contents appended after the user's message
     full_text = text
     for file_info in other_files:
-        full_text = f"{file_info['content']}\n\n---\n\n{full_text}"
+        full_text = f"{full_text}\n\n---\n\n{file_info['content']}"
 
     if image_files:
         # Multimodal content
